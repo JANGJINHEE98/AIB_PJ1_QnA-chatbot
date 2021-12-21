@@ -1,10 +1,18 @@
 # 전처리 모듈
 # 챗봇 엔진 내에서 자주 사용하기 때문에 클래스로 정의 
+import pickle
 from konlpy.tag import Komoran
 
 class Preprocess:
-    def __init__(self, userdic=None):
+    def __init__(self, word2index_dic='', userdic=None):
+        #단어 인덱스 사전 불러오기 
+        if(word2index_dic != ''): # 만약 단어 인덱스 사전이 비어있지 않다면
+            f = open(word2index_dic, "rb")
+            self.word_index = pickle.load(f) # 사전을 불러옵니다.
         # 형태소 분석기 초기화 
+        else : 
+            self_index = None
+        
         self.komoran = Komoran(userdic=userdic)
 
         # 제외할 품사 / 일부 품사를 불용어 처리합니다. 
@@ -28,6 +36,21 @@ class Preprocess:
             if f(p[1]) is False: # 단어가 exclusion_tags에 포함되지 않는다면! (불용어가 아니라면)
                 word_list.append(p if without_tag is False else p[0])
         return word_list
+
+    # 키워드를 단어 인덱스 시퀀스로 변환 
+    # 입력(keywords) ['곧', '크리스마스', '신난당']
+    # 출력(w2i) [3, 45, 735] (인덱스는 예시입니다.)
+    def get_wordidx_sequence(self, keywords):
+        if self.word_index is None:
+            return []
+        w2i = []
+        for word in keywords:
+            try:
+                w2i.append(self.word_index[word])
+            except KeyError:
+                # 해당 단어가 사전에 없는 경우 OOV 처리
+                w2i.append(self.word_index['OOV'])
+        return w2i
 
     
 
