@@ -28,3 +28,13 @@ models/intent/total_train_data.csv
 개체 인식 모델 학습데이터
 models/ner/ner_train.txt
 
+
+
+
+'O'  이외(기타)
+'B_DT'  날짜
+'B_FOOD'  음식
+'B_OG'  조직, 회사
+'B_PS'  사람
+'B_LC'  지역
+'B_TI'  시간

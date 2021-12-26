@@ -11,7 +11,7 @@ p = Preprocess(word2index_dic=w2i_dic_PATH,
                userdic=user_dic_PATH)
 
 ner = NerModel(model_name='chatbot/models/ner/ner_model.h5', preprocess=p)
-query = '오늘 3시 햄버거 세트 100개 예약'
+query = '돈까스 배달 되나요?'
 predicts = ner.predict(query)
 print("입력 쿼리:", query)
 print("결과:", predicts)

@@ -12,7 +12,7 @@ p = Preprocess(word2index_dic=w2i_dic_PATH, userdic=user_dic_PATH)
 
 intent = IntentModel(model_name='chatbot/models/intent/intent_model.h5', preprocess=p)
 
-query = "베토디 3개 시킬게요"
+query = "안녕하세요! 짜장면 주문 하고 싶어요"
 predict = intent.predict_class(query)
 predict_label = intent.labels[predict]
 

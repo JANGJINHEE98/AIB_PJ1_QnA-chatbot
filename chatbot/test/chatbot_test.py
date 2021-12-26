@@ -16,7 +16,7 @@ db = Database(
 db.connect()  # DB 연결
 
 # 원문
-query = '오늘 짬뽕 주문 할게요'
+query = input()
 
 # 의도 파악
 from models.intent.IntentModel import IntentModel
