@@ -1,7 +1,7 @@
-# AIB_PJ1_QnA-chatbot
+# 🎯 음식 주문 QnA-chatbot을 구현하는 프로젝트
 
-의도 분류에 쓰인 모델 CNN
-개체 인식에 쓰인 모델 양방향 LSTM 
+* [처음 배우는 딥러닝 챗봇](https://m.hanbit.co.kr/store/books/book_view.html?p_code=B7030488815)(한빛미디어)를 참고하여 만들었습니다. 
+* 사용한 모델 : 의도 분류에 쓰인 모델은 CNN이며, 개체 인식에 쓰인 모델은 양방향 LSTM입니다.
 
 [의도 분류 모델 class]
 인사    0
