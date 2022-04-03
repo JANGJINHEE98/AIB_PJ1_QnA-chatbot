@@ -1,6 +1,6 @@
 DB_HOST = "127.0.0.1"
 DB_USER = "zhenxi"
-DB_PASSWORD = "Zhendexihuan1!"
+DB_PASSWORD = ""
 DB_NAME = "my_db"
 
 
